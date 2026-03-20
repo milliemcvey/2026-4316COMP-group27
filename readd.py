@@ -1,17 +1,20 @@
-# imports
+#filter out the user input columns so its
+#more precise and graph more readable
+
+#make graphs more suited to the columns
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# 
 data = pd.read_csv('dataset.csv')
 #print column names
 print("Columns:", list(data.columns))
 
 
-# column selection
 column1 = input("enter column name:")
 column2 = input("enter column name:")
 
+#shows selected columns
 if column1 in data.columns and column2 in data.columns:
     print(data[[column1, column2]])
 
