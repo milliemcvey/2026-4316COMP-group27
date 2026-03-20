@@ -27,6 +27,8 @@ if column1 in data.columns and column2 in data.columns:
     ax.set_xlabel(column1)
     ax.set_ylabel(column2)
 
+    ax.grid(True)
+
     plt.show()
 
 else:
