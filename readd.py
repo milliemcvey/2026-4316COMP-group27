@@ -3,6 +3,8 @@
 
 #make graphs more suited to the columns
 
+#several plots in one figure?
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -21,14 +23,16 @@ if column1 in data.columns and column2 in data.columns:
     #matplotlib
     fig, ax = plt.subplots()  #figure and Axes
 
-    ax.plot(data[column1], data[column2])  #y and x
+    ax.scatter(data[column1], data[column2])  #y and x
 
     ax.set_title(f"{column1} vs {column2}")  #titles
     ax.set_xlabel(column1)
     ax.set_ylabel(column2)
 
+    ax.grid(True)
+
     plt.show()
 
 else:
-    print("not column")
+    print("not column") #repeat ask
 
