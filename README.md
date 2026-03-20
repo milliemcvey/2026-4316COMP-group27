@@ -1,8 +1,7 @@
 <h2>Functionality</h2>
-    <p></p>
+    <p>The application should allow the user to visualise data as graphs and numerical values, and filter information in order to gain useful insights in to the qualities of songs and trends between them.</p>
 
 <h2>Requirements</h2>
-
 
 <h2>Queries</h2>
     <ul>
