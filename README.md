@@ -6,16 +6,15 @@
         <li>A user-friendly menu that allows for easy operation of the application</li>
         <li>User selects whether to make a 'trend-based' or 'average-based' enquiry in to the data set</li>
 
-    </ol>
-    
+   
+ </ol>
     <h3>Trend-Based Enquiry</h3> 
     <p>If a 'trend-based' enquiry is selected, the system completes the following tasks:</p>
     <ol></ol>
 
-    <h3>Average-Based Enquiry</h3>
+<h3>Average-Based Enquiry</h3>
     <p>If an 'average-based' enquiry is selected, the system completes the following tasks:</p>
-    <ol></ol>
-
+    <ol></ol>    
 
 <h2>Queries</h2>
     <ul>
