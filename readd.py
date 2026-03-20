@@ -1,11 +1,11 @@
-# Is a higher energy track more  (e.g)?
-
 import pandas as pd
 
 data = pd.read_csv('dataset.csv')
 
-filtered = data[(data["popularity"] > 80) & (data["energy"] > 0.8)]
+column1 = input("enter column name:")
+column2 = input("enter column name:")
 
-new_data = filtered[["track_name", "popularity", "energy"]]
-
-print(new_data)
+if column1 in data.columns and column2 in data.columns:
+    print(data[["track_name", column1, column2]])
+else:
+    print("not column")
