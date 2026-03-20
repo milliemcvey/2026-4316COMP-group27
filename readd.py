@@ -3,6 +3,8 @@
 
 #make graphs more suited to the columns
 
+#several plots in one figure?
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
