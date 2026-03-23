@@ -30,14 +30,22 @@
         <li>Is there a most popular genre?</li>
         <li></li>
         <li>Does the tempo of a song affect the popularity?</li>
-        <li></li>
+        <li>Is there a genre with the longest/shortest songs?</li>
         <li>Does the loudness affect the energy of the song?</li>
+        <li></li>
+        <li>Does whether the song is explicit affect the popularity?</li>
         <li>Does the key of the song affect the energy?</li>
         <li>Does the length of the song affect the popularity?</li>
         <li>Are faster songs more danceable?</li>
-        <li></li>
+        <li>Do explicit songs have more energy?</li>
         <li>Are longer songs more or less danceable?</li>
         <li></li>
+        <li>Are explicit songs louder than others?</li>
     </ul>
+    <p>NOTE: See queries.xsls in the OneDrive for query allocation</p>
 
 <h2>Accessing Dataset within program</h2>
+    <p>NOTE: To be added at a later date</p>
+
+<h2>File Structure</h2>
+    <p>NOTE: To be added once file structure is final</p>
