@@ -10,15 +10,20 @@
     <h3>Trend-Based Enquiry</h3> 
     <p>If a 'trend-based' enquiry is selected, the system completes the following tasks:</p>
     <ol>
-    <li>The selects two column names and enters in to the system</li>
+    <li>The user selects two column names and enters in to the system</li>
     <li>The system feeds back the names of the column</li>
     <li>The system the produces a graph between the selected columns (including trend lines) to show the user the relationship between the variables</li>
+    <li>NOTE: Additional Functionality Needed Here, e.g. option to create another enquiry</li>
     </ol>
     
 
 <h3>Average-Based Enquiry</h3>
-    <p>If an 'average-based' enquiry is selected, the system completes the lfollowing tasks:</p>
-    <ol></ol>    
+    <p>If an 'average-based' enquiry is selected, the system completes the following tasks:</p>
+    <ol>
+        <li>The user selects two column names and enters in to the system</li>
+        <li>The system feeds back the names of the column</li>
+        <li>The system presents the user the average values</li>
+        <li>NOTE: Additional Functionality Needed Here, e.g. option to create another enquiry</li>
 
 <h2>Queries</h2>
     <ul>
