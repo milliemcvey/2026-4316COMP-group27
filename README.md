@@ -39,10 +39,9 @@
         <li>Are faster songs more danceable?</li>
         <li>Do explicit songs have more energy?</li>
         <li>Are longer songs more or less danceable?</li>
-        <li></li>
+        <li>Does the key of a song affect the popularity?</li>
         <li>Are explicit songs louder than others?</li>
     </ul>
-    
     <p>NOTE: See queries.xsls in the OneDrive for query allocation</p>
 
 <h2>Accessing Dataset within program</h2>
