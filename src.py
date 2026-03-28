@@ -4,15 +4,19 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('dataset.csv') # Reads the data set
 
 #-----------------------FUNCTIONS-----------------------
-#Trend-Based Function
+#Trend-Based Function ---
 def trendBasedEnquiry(df):
+    filtered_columns = df.columns[5:]
+    
     print("\nAvailable columns:")
-    print(list(df.columns))
+    print(list(filtered_columns))
 
     # Input validation loop
     while True:
-        column1 = input("\nEnter first column name: ")
-        column2 = input("Enter second column name: ")
+        print("\nEnter first column name: ", end="", flush=True)
+        column1 = input()
+        print("Enter second column name: ", end="", flush=True)
+        column2 = input()
 
         if column1 in df.columns and column2 in df.columns:
             break
@@ -34,9 +38,11 @@ def trendBasedEnquiry(df):
     plt.show()
 
 
-#Average-Based Function
+#Average-Based Function ---
+
 
 #-----------------------MAIN PROGRAM-----------------------
+
 #Opening Menu -----------------------------
 
 while True:
@@ -53,11 +59,14 @@ while True:
 
     if initialMenuSelection == 1:
         print("--- Trend-Based Enquiry ---")
-        # call your trend function here
+        try:
+            trendBasedEnquiry(data)
+        except Exception as e:
+            print("ERROR:", e)
 
     elif initialMenuSelection == 2:
         print("--- Average-Based Enquiry ---")
-        # call your average function here
+        # call average function here
 
     elif initialMenuSelection == 3:
         print("Thank You For Using The System")
