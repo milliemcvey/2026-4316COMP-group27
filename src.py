@@ -6,7 +6,7 @@ data = pd.read_csv('dataset.csv') # Reads the data set
 #-----------------------FUNCTIONS-----------------------
 #Trend-Based Function ---
 def trendBasedEnquiry(df):
-    filtered_columns = df.columns[5:]
+    filtered_columns = df.columns[5:] #removes non-useful column options like track_name etc.
     
     print("\nAvailable columns:")
     print(list(filtered_columns))
@@ -60,7 +60,7 @@ while True:
     if initialMenuSelection == 1:
         print("--- Trend-Based Enquiry ---")
         try:
-            trendBasedEnquiry(data)
+            trendBasedEnquiry(data) #calls trend-based function (above)
         except Exception as e:
             print("ERROR:", e)
 
