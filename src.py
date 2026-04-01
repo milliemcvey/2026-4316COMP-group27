@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 data = pd.read_csv('dataset.csv') # Reads the data set
 
@@ -29,6 +30,11 @@ def trendBasedEnquiry(df):
     # Create scatter plot
     fig, ax = plt.subplots()
     ax.scatter(df[column1], df[column2])
+
+    x = df[column1]
+    y = df[column2]
+    m, b = np.polyfit(x, y, 1)
+    ax.plot(x, m*x + b, color='red', linewidth=3)
 
     ax.set_title(f"{column1} vs {column2}")
     ax.set_xlabel(column1)
