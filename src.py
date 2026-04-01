@@ -42,11 +42,12 @@ def trendBasedEnquiry(df):
     
     ax.plot(x, m*x + b, color='red', linewidth=2)
     
-    ax.set_title(f"{column1} vs {column2}")
-    ax.set_xlabel(column1)
-    ax.set_ylabel(column2)
+    ax.set_title(f"{column1} vs {column2}", fontsize=14)
+    ax.set_xlabel(column1, fontsize=12)
+    ax.set_ylabel(column2, fontsize=12)
     ax.grid(True)
 
+    plt.tight_layout()
     plt.show()
 
 
