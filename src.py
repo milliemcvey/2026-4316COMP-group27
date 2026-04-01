@@ -27,15 +27,22 @@ def trendBasedEnquiry(df):
     # Show selected columns
     print(df[[column1, column2]])
 
+    # Reduce dataset size - random sample from dataset
+    sample_df = df[[column1, column2]].dropna().sample(n=500, random_state=42)
+                              
     # Create scatter plot
-    fig, ax = plt.subplots()
-    ax.scatter(df[column1], df[column2])
+    fig, ax = plt.subplots(figsize=(8, 5))
+    plt.style.use('seaborn-v0_8')
 
-    x = df[column1]
-    y = df[column2]
+    ax.scatter(sample_df[column1], sample_df[column2], s=25, alpha=0.5)
+
+    x = sample_df[column1]
+    y = sample_df[column2]
+
     m, b = np.polyfit(x, y, 1)
+    
     ax.plot(x, m*x + b, color='red', linewidth=3)
-
+    
     ax.set_title(f"{column1} vs {column2}")
     ax.set_xlabel(column1)
     ax.set_ylabel(column2)
