@@ -58,7 +58,7 @@ def averageBasedEnquiry(df):
     print("\n--Average-Based Enquiry--")
 
     print("\nAvailable Columns")
-    print(list(filtered_columns))
+    print(list(filtered_columns)) #removes the columns that aren't needed, e.g. track_name etc.
 
     while True:
         print("\nPlease enter the first column name: ", end="", flush=True)
