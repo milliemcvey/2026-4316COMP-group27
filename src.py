@@ -16,7 +16,7 @@ def trendBasedEnquiry(df):
     while True:
         print("\nPlease enter the first column name: ", end="", flush=True)
         column1 = input()
-        print("Enter second column name: ", end="", flush=True)
+        print("Please enter the second column name: ", end="", flush=True)
         column2 = input()
 
         if column1 in df.columns and column2 in df.columns:
