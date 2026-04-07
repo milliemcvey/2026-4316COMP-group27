@@ -71,6 +71,8 @@ def averageBasedEnquiry(df):
         else:
             print("Invalid column name(s). Please try again.")
 
+    #add in column average calculations here
+
 
 #-----------------------MAIN PROGRAM-----------------------
 
