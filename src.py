@@ -14,7 +14,7 @@ def trendBasedEnquiry(df):
 
     # Input validation loop
     while True:
-        print("\nEnter first column name: ", end="", flush=True)
+        print("\nPlease enter the first column name: ", end="", flush=True)
         column1 = input()
         print("Enter second column name: ", end="", flush=True)
         column2 = input()
