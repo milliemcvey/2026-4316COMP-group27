@@ -53,13 +53,13 @@ def trendBasedEnquiry(df):
 
 #Average-Based Function ---
 def averageBasedEnquiry(df):
-    filtered_columns = df.columns[5:]
+    filtered_columns = df.columns[5:] #removes the columns that aren't needed, e.g. track_name etc.
+
 
     print("\n--Average-Based Enquiry--")
 
     print("\nAvailable Columns")
-    print(list(filtered_columns)) #removes the columns that aren't needed, e.g. track_name etc.
-
+    print(list(filtered_columns)) 
     while True:
         print("\nPlease enter the first column name: ", end="", flush=True)
         column1 = input()
