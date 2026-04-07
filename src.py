@@ -74,6 +74,8 @@ def averageBasedEnquiry(df):
     #add in column average calculations here
 
 
+    #add in additional functionality (create another enquiry) here
+
 #-----------------------MAIN PROGRAM-----------------------
 
 #Opening Menu -----------------------------
