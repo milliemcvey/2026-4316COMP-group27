@@ -87,6 +87,18 @@ except Exception as e:
 
 
     #add in additional functionality (create another enquiry) here
+while True:
+    print("\nWould you like to make another average enquiry? (yes/no): ", end="", flush=True)
+    again = input().strip().lower()
+
+    if again == "yes":
+        return averageBasedEnquiry(df)  # restart the function
+    elif again == "no":
+        print("Returning to the main menu...")
+        break
+    else:
+        print("Invalid input – please type 'yes' or 'no:'")
+
 
 #-----------------------MAIN PROGRAM-----------------------
 
