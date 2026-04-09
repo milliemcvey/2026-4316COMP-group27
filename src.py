@@ -71,7 +71,19 @@ def averageBasedEnquiry(df):
         else:
             print("Invalid column name(s). Please try again.")
 
-    #add in column average calculations here
+    #Averages calculations 
+    print(f"\nYou have selected: {column1} and {column2}")
+
+    try:
+        avg1 = df[column1].mean()  #calculates the averages
+        avg2 = df[column2].mean()
+
+print("\n-- Average Results --")  
+print(f"Average of {column1}: {avg1:.2f}") #gives results 
+print(f"Average of {column2}: {avg2:.2f}")
+
+except Exception as e:
+      print("Error calclulating the avergages:", e)
 
 
     #add in additional functionality (create another enquiry) here
