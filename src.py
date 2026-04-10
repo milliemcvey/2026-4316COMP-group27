@@ -126,6 +126,10 @@ while True:
     elif initialMenuSelection == 2:
         print("--- Average-Based Enquiry ---")
         # call average function here
+        try: 
+            averageBasedEnquiry(data)
+        except Exception as e: 
+            print("ERROR:", e)
 
     elif initialMenuSelection == 3:
         print("Thank You For Using The System")
