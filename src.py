@@ -83,7 +83,7 @@ print(f"Average of {column1}: {avg1:.2f}") #gives results
 print(f"Average of {column2}: {avg2:.2f}")
 
 except Exception as e:
-      print("Error calclulating the avergages:", e)
+      print("Error calclulating the average:", e)
 
 
     #add in additional functionality (create another enquiry) here
