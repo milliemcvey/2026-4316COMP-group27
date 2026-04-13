@@ -74,20 +74,20 @@ def averageBasedEnquiry(df):
     #Averages calculations 
     print(f"\nYou have selected: {column1} and {column2}")
 
-    try:
-        avg1 = df[column1].mean()  #calculates the averages
+       try:
+        avg1 = df[column1].mean()
         avg2 = df[column2].mean()
+        
+        print("\n-- Average Results --")  
+        print(f"Average of {column1}: {avg1:.2f}")
+        print(f"Average of {column2}: {avg2:.2f}")
 
-print("\n-- Average Results --")  
-print(f"Average of {column1}: {avg1:.2f}") #gives results 
-print(f"Average of {column2}: {avg2:.2f}")
-
-except Exception as e:
+    except Exception as e:
     print("Error calclulating the average:", e)
 
     #add in additional functionality (create another enquiry) here
 while True:
-    print("\Would you like to make another average enquiry? (yes/no): ", end="", flush=True)
+    print("\nWould you like to make another average enquiry? (yes/no): ", end="", flush=True)
     again = input().strip().lower()
 
     if again == "yes":
