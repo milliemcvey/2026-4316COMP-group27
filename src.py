@@ -87,19 +87,17 @@ def averageBasedEnquiry(df):
 
     #add in additional functionality (create another enquiry) here
 while True:
-    print("\nWould you like to make another average enquiry? (yes/no): ", end="", flush=True)
+    print("\nWould you like another average enquiry? (yes/no): ", end="", flush=True) 
     again = input().strip().lower()
 
     if again == "yes":
-        averageBasedEnquiry(df) 
+        averageBasedEnquiry(df)
         return
     elif again == "no":
         print("Returning to the main menu...")
-        return
-        break
+        return  
     else:
-        print("Invalid input – please type 'yes' or 'no:'")
-
+        print(" Please type 'yes' or 'no'")
 
 #-----------------------MAIN PROGRAM-----------------------
 
