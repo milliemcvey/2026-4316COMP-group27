@@ -62,9 +62,9 @@ def averageBasedEnquiry(df):
     print(list(filtered_columns)) 
     while True:
         print("\nPlease enter the first column name: ", end="", flush=True)
-        column1 = input()
+        column1 = input().strip
         print("\nPlease enter the second column name:", end="", flush=True)
-        column2 = input()
+        column2 = input().strip
 
         if column1 in df.columns and column2 in df.columns:
             break
