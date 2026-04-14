@@ -54,7 +54,7 @@ def trendBasedEnquiry(df):
 
 def averageBasedEnquiry(df):
     filtered_columns = df.columns[5:]
-    print("\n--Average-Based Enquiry--")
+    print("\nAverage-Based Enquiry")
     print("\nAvailable Columns:")
     print(list(filtered_columns))
     
