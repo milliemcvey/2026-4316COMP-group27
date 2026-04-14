@@ -53,24 +53,43 @@ def trendBasedEnquiry(df):
 
 #Average-Based Function ---
 def averageBasedEnquiry(df):
-    filtered_columns = df.columns[5:] #removes the columns that aren't needed, e.g. track_name etc.
+    filtered_columns = df.columns[5:] #removes the columns that aren't needed
+    print("\nAverage Based Enquiry")
+    print("\nAvaliable Collumns:", list(filtered_collumns))
 
+while True:
+    print("\nEnter first collumn: ", end="")
+    column1 = input().strip()
+    print("\nEnter second collumn: ", end="")
+    column1 = input().strip()
+    if column1 in df.columns and column2 in df.columns:
+        break
+    print("invalid columns!")
 
-    print("\n--Average-Based Enquiry--")
+try:
+    print(f"\n{column1}: {df[column1].mean():.3f}")
+    print(f"{column2}: {df[column2].mean():.3f}")
+except:
+    print("Error calcutating averages")
 
-    print("\nAvailable Columns")
-    print(list(filtered_columns)) 
-    while True:
-        print("\nPlease enter the first column name: ", end="", flush=True)
-        column1 = input().strip
-        print("\nPlease enter the second column name:", end="", flush=True)
-        column2 = input().strip
+while True:
+    print("\n" + "="*50)
+    print("Research Queries")
+    print("1- Explicit vs Popularity?)
+    print("2- Song Length vs Popularity?")
+    print("3- Custom Averages")
+    print("4- Main Menu")
+    print("="*50)
 
-        if column1 in df.columns and column2 in df.columns:
-            break
-        else:
-            print("Invalid column name(s). Please try again.")
-
+    choice = input("Choice (1-4): ").strip()
+    if choice =="1" :
+    elif choice == "2":
+    elif choice == "3":
+    elif  choice =="4":
+         return
+  
+  
+        
     #Averages calculations 
     print(f"\nYou have selected: {column1} and {column2}")
 
