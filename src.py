@@ -75,7 +75,7 @@ def averageBasedEnquiry(df):
     try:
         avg1 = df[column1].mean()
         avg2 = df[column2].mean()
-        print("\n-- Average Results --")
+        print("\nAverage Results ")
         print(f"Average of {column1}: {avg1:.2f}")
         print(f"Average of {column2}: {avg2:.2f}")
     except Exception as e:
@@ -83,13 +83,11 @@ def averageBasedEnquiry(df):
 
     # Query menu
     while True:
-        print("\n" + "="*50)
         print("RESEARCH QUERIES MENU")
         print("1. Does explicit content affect popularity?")
         print("2. Does song length affect popularity?")
         print("3. Custom average enquiry")
         print("4. Back to main menu")
-        print("="*50)
         
         try:
             query_choice = int(input("Select query (1-4): "))
