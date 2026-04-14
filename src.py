@@ -103,7 +103,7 @@ def averageBasedEnquiry(df):
                 explicit_pop = df.groupby('explicit')['popularity'].mean()
                 print(f"Non-explicit avg popularity: {explicit_pop[0]:.2f}")
                 print(f"Explicit avg popularity: {explicit_pop[1]:.2f}")
-                print(f"INSIGHT: {'Explicit songs are MORE popular' if explicit_pop[1]>explicit_pop[0] else 'Explicit songs are LESS popular'}")
+                print(f"INSIGHT: {'Explicit songs are MORE popular' if explicit_pop[1]>explicit_pop[0] else 'Explicit songs are less popular'}")
             except:
                 print("Columns 'explicit' or 'popularity' not found")
                 
@@ -115,7 +115,7 @@ def averageBasedEnquiry(df):
                 long_songs = df[df['duration_min'] >= df['duration_min'].median()]
                 print(f"Short songs avg: {short_songs['popularity'].mean():.2f}")
                 print(f"Long songs avg: {long_songs['popularity'].mean():.2f}")
-                print(f"INSIGHT: {'Longer songs are MORE popular' if long_songs['popularity'].mean() > short_songs['popularity'].mean() else 'Shorter songs are MORE popular'}")
+                print(f"INSIGHT: {'Longer songs are MORE popular' if long_songs['popularity'].mean() > short_songs['popularity'].mean() else 'Shorter songs are more popular'}")
             except:
                 print("Columns 'duration_ms' or 'popularity' not found")
                 
