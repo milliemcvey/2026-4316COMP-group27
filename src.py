@@ -50,73 +50,92 @@ def trendBasedEnquiry(df):
     plt.tight_layout()
     plt.show()
 
+# average-based function
 
-#Average-Based Function ---
 def averageBasedEnquiry(df):
-    filtered_columns = df.columns[5:] #removes the columns that aren't needed
-    print("\nAverage Based Enquiry")
-    print("\nAvaliable Collumns:", list(filtered_collumns))
+    filtered_columns = df.columns[5:]
+    print("\n--Average-Based Enquiry--")
+    print("\nAvailable Columns:")
+    print(list(filtered_columns))
+    
+    while True:
+        print("\nPlease enter the first column name: ", end="", flush=True)
+        column1 = input().strip()
+        print("Please enter the second column name: ", end="", flush=True)
+        column2 = input().strip()
 
-while True:
-    print("\nEnter first collumn: ", end="")
-    column1 = input().strip()
-    print("\nEnter second collumn: ", end="")
-    column1 = input().strip()
-    if column1 in df.columns and column2 in df.columns:
-        break
-    print("invalid columns!")
+        if column1 in df.columns and column2 in df.columns:
+            break
+        else:
+            print("Invalid column name(s). Please try again.")
 
-try:
-    print(f"\n{column1}: {df[column1].mean():.3f}")
-    print(f"{column2}: {df[column2].mean():.3f}")
-except:
-    print("Error calcutating averages")
-
-while True:
-    print("\n" + "="*50)
-    print("Research Queries")
-    print("1- Explicit vs Popularity?)
-    print("2- Song Length vs Popularity?")
-    print("3- Custom Averages")
-    print("4- Main Menu")
-    print("="*50)
-
-    choice = input("Choice (1-4): ").strip()
-    if choice =="1" :
-    elif choice == "2":
-    elif choice == "3":
-    elif  choice =="4":
-         return
-  
-  
-        
-    #Averages calculations 
     print(f"\nYou have selected: {column1} and {column2}")
 
-       try:
+    # average calculations
+    try:
         avg1 = df[column1].mean()
         avg2 = df[column2].mean()
-        
-        print("\n-- Average Results --")  
+        print("\n-- Average Results --")
         print(f"Average of {column1}: {avg1:.2f}")
         print(f"Average of {column2}: {avg2:.2f}")
-
     except Exception as e:
-    print("Error calclulating the average:", e)
+        print("Error calculating the average:", e)
 
-    #add in additional functionality (create another enquiry) here
-while True:
-    print("\nWould you like another average enquiry? (yes/no): ", end="", flush=True) 
-    again = input().strip().lower()
-
-    if again == "yes":
-        averageBasedEnquiry(df)
-        return
-    elif again == "no":
-        print("Returning to the main menu...")
-        return  
-    else:
-        print(" Please type 'yes' or 'no'")
+    # Query menu
+    while True:
+        print("\n" + "="*50)
+        print("RESEARCH QUERIES MENU")
+        print("1. Does explicit content affect popularity?")
+        print("2. Does song length affect popularity?")
+        print("3. Custom average enquiry")
+        print("4. Back to main menu")
+        print("="*50)
+        
+        try:
+            query_choice = int(input("Select query (1-4): "))
+        except:
+            print("Enter a number!")
+            continue
+            
+        if query_choice == 1:
+            print("\nQUERY 1: Explicit vs Popularity")
+            try:
+                explicit_pop = df.groupby('explicit')['popularity'].mean()
+                print(f"Non-explicit avg popularity: {explicit_pop[0]:.2f}")
+                print(f"Explicit avg popularity: {explicit_pop[1]:.2f}")
+                print(f"INSIGHT: {'Explicit songs are MORE popular' if explicit_pop[1]>explicit_pop[0] else 'Explicit songs are LESS popular'}")
+            except:
+                print("Columns 'explicit' or 'popularity' not found")
+                
+        elif query_choice == 2:
+            print("\nQUERY 2: Duration vs Popularity")
+            try:
+                df['duration_min'] = df['duration_ms'] / 60000
+                short_songs = df[df['duration_min'] < df['duration_min'].median()]
+                long_songs = df[df['duration_min'] >= df['duration_min'].median()]
+                print(f"Short songs avg: {short_songs['popularity'].mean():.2f}")
+                print(f"Long songs avg: {long_songs['popularity'].mean():.2f}")
+                print(f"INSIGHT: {'Longer songs are MORE popular' if long_songs['popularity'].mean() > short_songs['popularity'].mean() else 'Shorter songs are MORE popular'}")
+            except:
+                print("Columns 'duration_ms' or 'popularity' not found")
+                
+        elif query_choice == 3:
+            print("\nCustom enquiry:")
+            print("Available:", list(df.columns[5:]))
+            col1 = input("Column 1: ").strip()
+            col2 = input("Column 2: ").strip()
+            if col1 in df.columns and col2 in df.columns:
+                print(f"{col1}: {df[col1].mean():.3f}")
+                print(f"{col2}: {df[col2].mean():.3f}")
+            else:
+                print("Invalid columns")
+                
+        elif query_choice == 4:
+            print("Returning to main menu...")
+            return
+            
+        else:
+            print("Choose 1-4")
 
 #-----------------------MAIN PROGRAM-----------------------
 
