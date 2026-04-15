@@ -77,19 +77,18 @@ def averageBasedEnquiry(df):
         avg2 = df[column2].mean()
         print("\n====AVERAGE RESULTS====")
         print(f"Average of {column1}  {avg1:.2f}")
+        print()
         print(f"Average of {column2}: {avg2:.2f}")
     except Exception as e:
         print("Error calculating the average:", e)
 
     # Query menu
     while True:
-        print("\n" + "="*50)
-        print("RESEARCH QUERIES MENU")
-        print("1. Does explicit content affect popularity?")
-        print("2. Does song length affect popularity?")
-        print("3. Custom average enquiry")
-        print("4. Back to main menu")
-        print("="*50)
+        print("===RESEARCH QUERIES MENU===")
+        print("1. Most Popular Genre")
+        print("2. Genre with Shortest/Longest Songs")
+        print("3. Custom Query (Pick Two Columns)")
+        print("4  Back to Main Menu")
         
         try:
             query_choice = int(input("Select query (1-4): "))
@@ -98,38 +97,70 @@ def averageBasedEnquiry(df):
             continue
             
         if query_choice == 1:
-            print("\nQUERY 1: Explicit vs Popularity")
-            try:
-                explicit_pop = df.groupby('explicit')['popularity'].mean()
-                print(f"Non-explicit avg popularity: {explicit_pop[0]:.2f}")
-                print(f"Explicit avg popularity: {explicit_pop[1]:.2f}")
-                print(f"INSIGHT: {'Explicit songs are MORE popular' if explicit_pop[1]>explicit_pop[0] else 'Explicit songs are less popular'}")
-            except:
-                print("Columns 'explicit' or 'popularity' not found")
+            print("\nQUERY 1: Most Popular Genre")
+
+            genre_popularity = df.groupby("track_genre")["popularity"].mean()
+
+            print("\Average popularity by genre:")
+            print(genre_popularity)
+
+            top_genre = genre_popularity.idxmax()
+            top_value = genre_popularity.max()
+
+            print("==========================================================")
+            print(f"----- Most Popular Genre ------")
+            print(f"The most popular genre is: {top_genre}")
+            print(f"With the average of popularity being: {top_value: .2f}")
+            print("==========================================================")
                 
         elif query_choice == 2:
-            print("\nQUERY 2: Duration vs Popularity")
-            try:
-                df['duration_min'] = df['duration_ms'] / 60000
-                short_songs = df[df['duration_min'] < df['duration_min'].median()]
-                long_songs = df[df['duration_min'] >= df['duration_min'].median()]
-                print(f"Short songs avg: {short_songs['popularity'].mean():.2f}")
-                print(f"Long songs avg: {long_songs['popularity'].mean():.2f}")
-                print(f"INSIGHT: {'Longer songs are MORE popular' if long_songs['popularity'].mean() > short_songs['popularity'].mean() else 'Shorter songs are more popular'}")
-            except:
-                print("Columns 'duration_ms' or 'popularity' not found")
-                
+            print("\nQUERY 2: Genre with Shortest/longest songs")
+            
+            genre_length = df.groupby("track_genre")["duration_ms"].mean()
+
+            print("\nAvergae song length per genre:")
+            print(genre_length)
+
+            longest = genre_length.idxmax()
+            shortest = genre_length.idxmin()
+
+            print("================================================")
+            print(f"genre with longest songs is: {longest}")
+            print(f"genre with the shortest songs is: {shortest}")
+            print("==================================================")
+
+            
         elif query_choice == 3:
-            print("\nCustom enquiry:")
+            print("\nCustom Query:")
             print("Available:", list(df.columns[5:]))
+           
             col1 = input("Column 1: ").strip()
             col2 = input("Column 2: ").strip()
-            if col1 in df.columns and col2 in df.columns:
-                print(f"{col1}: {df[col1].mean():.3f}")
-                print(f"{col2}: {df[col2].mean():.3f}")
+
+            if column1 in df.columns and column2 in df.columns:
+
+                corr = df[column1].corr(df[column2])
+                print("\n-------TREND RESULT---------")
+                print(f"Correlation between {column1} and {column2}: {corr: .3f}")
+            
+                if corr > 0.5:
+                     print("- Positive Trend ")
+                elif corr < -0.5:
+                     print("- Negative Trend")
+                else: 
+                     print("- Weak Trend")
+
+                avg1 = df[column1].mean()
+                avg2 = df[column2].mean()
+               
+                print()
+                print("------AVERAGE RESULTS--------")
+                print(f"Average of {column1}  {avg1:.2f}")
+                print(f"Average of {column2}: {avg2:.2f}")
+          
             else:
                 print("Invalid columns")
-                
+            
         elif query_choice == 4:
             print("Returning to main menu...")
             return
