@@ -77,7 +77,6 @@ def averageBasedEnquiry(df):
         avg2 = df[column2].mean()
         print("\n====AVERAGE RESULTS====")
         print(f"Average of {column1}  {avg1:.2f}")
-        print()
         print(f"Average of {column2}: {avg2:.2f}")
     except Exception as e:
         print("Error calculating the average:", e)
@@ -131,16 +130,16 @@ def averageBasedEnquiry(df):
 
             
         elif query_choice == 3:
-            print("\nCustom Query:")
+            print("\n======Custom Query:=============")
             print("Available:", list(df.columns[5:]))
-           
+            print("=================================")
             col1 = input("Column 1: ").strip()
             col2 = input("Column 2: ").strip()
 
             if column1 in df.columns and column2 in df.columns:
 
                 corr = df[column1].corr(df[column2])
-                print("\n-------TREND RESULT---------")
+                print("\n----------------TREND RESULT-------------------------------")
                 print(f"Correlation between {column1} and {column2}: {corr: .3f}")
             
                 if corr > 0.5:
@@ -157,6 +156,7 @@ def averageBasedEnquiry(df):
                 print("------AVERAGE RESULTS--------")
                 print(f"Average of {column1}  {avg1:.2f}")
                 print(f"Average of {column2}: {avg2:.2f}")
+                print("-----------------------------")
           
             else:
                 print("Invalid columns")
