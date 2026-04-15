@@ -75,8 +75,8 @@ def averageBasedEnquiry(df):
     try:
         avg1 = df[column1].mean()
         avg2 = df[column2].mean()
-        print("\n-- Average Results --")
-        print(f"Average of {column1}: {avg1:.2f}")
+        print("\n====AVERAGE RESULTS====")
+        print(f"Average of {column1}  {avg1:.2f}")
         print(f"Average of {column2}: {avg2:.2f}")
     except Exception as e:
         print("Error calculating the average:", e)
