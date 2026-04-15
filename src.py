@@ -53,13 +53,13 @@ def trendBasedEnquiry(df):
 # average-based function
 
 def averageBasedEnquiry(df):
-    filtered_columns = df.columns[5:]
+    filtered_columns = df.columns[5:] 
     print("\nAverage-Based Enquiry")
     print("\nAvailable Columns:")
-    print(list(filtered_columns))
+    print(list(filtered_columns)) #displays columns for the user to choose from 
     
     while True:
-        print("\nPlease enter the first column name: ", end="", flush=True)
+        print("\nPlease enter the first column name: ", end="", flush=True) #input validation for column names 
         column1 = input().strip()
         print("Please enter the second column name: ", end="", flush=True)
         column2 = input().strip()
@@ -73,7 +73,7 @@ def averageBasedEnquiry(df):
 
     # average calculations
     try:
-        avg1 = df[column1].mean()
+        avg1 = df[column1].mean() #calulates averge for column
         avg2 = df[column2].mean()
 
         print("\n====AVERAGE RESULTS====")
@@ -101,13 +101,13 @@ def averageBasedEnquiry(df):
         if query_choice == 1:
             print("\nQUERY 1: Most Popular Genre")
 
-            genre_popularity = df.groupby("track_genre")["popularity"].mean()
+            genre_popularity = df.groupby("track_genre")["popularity"].mean() #calulates the avergae popularity for each genre
 
             print("\Average popularity by genre:")
             print(genre_popularity)
 
-            top_genre = genre_popularity.idxmax()
-            top_value = genre_popularity.max()
+            top_genre = genre_popularity.idxmax() #finds the genre with the highest popularity 
+            top_value = genre_popularity.max() 
 
             print("==========================================================")
             print(f"----- Most Popular Genre ------")
@@ -118,13 +118,13 @@ def averageBasedEnquiry(df):
         elif query_choice == 2:
             print("\nQUERY 2: Genre with Shortest/longest songs")
             
-            genre_length = df.groupby("track_genre")["duration_ms"].mean()
+            genre_length = df.groupby("track_genre")["duration_ms"].mean() #
 
             print("\nAvergae song length per genre:")
             print(genre_length)
 
-            longest = genre_length.idxmax()
-            shortest = genre_length.idxmin()
+            longest = genre_length.idxmax() #finds genre with the longest songs
+            shortest = genre_length.idxmin() #finds genre wiht the shortest songs 
 
             print("================================================")
             print(f"genre with longest songs is: {longest}")
@@ -133,17 +133,17 @@ def averageBasedEnquiry(df):
 
             
         elif query_choice == 3:
-            print("\n======Custom Query:=============")
-            print("Available:", list(df.columns[5:]))
+            print("\n======Custom Query:=============") 
+            print("Available:", list(df.columns[5:])) 
             print("=================================")
-            col1 = input("Column 1: ").strip()
+            col1 = input("Column 1: ").strip() #input validation for column names 
             col2 = input("Column 2: ").strip()
 
-            if column1 in df.columns and column2 in df.columns:
+            if column1 in df.columns and column2 in df.columns: 
 
                 corr = df[column1].corr(df[column2])
                 print("\n----------------TREND RESULT-------------------------------")
-                print(f"Correlation between {column1} and {column2}: {corr: .3f}")
+                print(f"Correlation between {column1} and {column2}: {corr: .3f}") #calulates the correlation 
             
                 if corr > 0.5:
                      print("- Positive Trend ")
