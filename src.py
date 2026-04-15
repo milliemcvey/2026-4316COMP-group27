@@ -75,6 +75,7 @@ def averageBasedEnquiry(df):
     try:
         avg1 = df[column1].mean()
         avg2 = df[column2].mean()
+
         print("\n====AVERAGE RESULTS====")
         print(f"Average of {column1}  {avg1:.2f}")
         print(f"Average of {column2}: {avg2:.2f}")
@@ -83,11 +84,13 @@ def averageBasedEnquiry(df):
 
     # Query menu
     while True:
+
         print("===RESEARCH QUERIES MENU===")
         print("1. Most Popular Genre")
         print("2. Genre with Shortest/Longest Songs")
         print("3. Custom Query (Pick Two Columns)")
         print("4  Back to Main Menu")
+
         
         try:
             query_choice = int(input("Select query (1-4): "))
