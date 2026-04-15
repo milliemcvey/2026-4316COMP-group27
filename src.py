@@ -77,7 +77,7 @@ def averageBasedEnquiry(df):
         avg2 = df[column2].mean()
 
         print("\n====AVERAGE RESULTS====")
-        print(f"Average of {column1}  {avg1:.2f}")
+        print(f"Average of {column1}  {avg1:.2f}") 
         print(f"Average of {column2}: {avg2:.2f}")
     except Exception as e:
         print("Error calculating the average:", e)
@@ -93,7 +93,7 @@ def averageBasedEnquiry(df):
 
         
         try:
-            query_choice = int(input("Select query (1-4): "))
+            query_choice = int(input("Select query (1-4): ")) 
         except:
             print("Enter a number!")
             continue
@@ -107,7 +107,7 @@ def averageBasedEnquiry(df):
             print(genre_popularity)
 
             top_genre = genre_popularity.idxmax() #finds the genre with the highest popularity 
-            top_value = genre_popularity.max() 
+            top_value = genre_popularity.max() #finds the value of highest popularity 
 
             print("==========================================================")
             print(f"----- Most Popular Genre ------")
