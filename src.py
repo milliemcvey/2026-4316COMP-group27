@@ -95,7 +95,7 @@ def queryMenu(df):
         try:
             query_choice = int(input("Select query (1-4): ")) 
         except:
-            print("Enter a number!")
+            print("Please enter a number:")
             continue
             
         if query_choice == 1:
@@ -120,15 +120,15 @@ def queryMenu(df):
             
             genre_length = df.groupby("track_genre")["duration_ms"].mean() #
 
-            print("\nAvergae song length per genre:")
+            print("\nAverage song length per genre:")
             print(genre_length)
 
             longest = genre_length.idxmax() #finds genre with the longest songs
             shortest = genre_length.idxmin() #finds genre wiht the shortest songs 
 
             print("================================================")
-            print(f"genre with longest songs is: {longest}")
-            print(f"genre with the shortest songs is: {shortest}")
+            print(f"Genre with longest songs is: {longest}")
+            print(f"Genre with the shortest songs is: {shortest}")
             print("==================================================")
 
             
@@ -187,7 +187,7 @@ while True:
     print("4. Exit")
 
     try:
-        initialMenuSelection = int(input("Enter your choice: "))
+        initialMenuSelection = int(input("Please enter your choice: "))
     except ValueError:
         print("Invalid input — please enter a number.") #input validation
         continue
@@ -215,7 +215,7 @@ while True:
             print("Error:", e)
 
     elif initialMenuSelection == 4:
-        print("Thank You For Using The System")
+        print("Thank You For Using The System!")
         break
 
     else:
