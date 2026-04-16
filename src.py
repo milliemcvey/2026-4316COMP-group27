@@ -103,7 +103,7 @@ def queryMenu(df):
 
             genre_popularity = df.groupby("track_genre")["popularity"].mean() #calulates the avergae popularity for each genre
 
-            print("\Average popularity by genre:")
+            print("Average popularity by genre:")
             print(genre_popularity)
 
             top_genre = genre_popularity.idxmax() #finds the genre with the highest popularity 
@@ -146,11 +146,15 @@ def queryMenu(df):
                 print(f"Correlation between {column1} and {column2}: {corr: .3f}") #calulates the correlation 
             
                 if corr > 0.5:
-                     print("- Positive Trend ")
+                     print("- STRONG POSITIVE")
+                elif corr > 0.3:
+                    print("- MODERATE POSITIVE")
                 elif corr < -0.5:
-                     print("- Negative Trend")
+                     print("- STRONG NEGATIVE")
+                elif corr < -0.3:
+                    print("- MODERATE NEGATIVE")
                 else: 
-                     print("- Weak Trend")
+                    print("- WEAK OR NO TREND")
 
                 avg1 = df[column1].mean()
                 avg2 = df[column2].mean()
