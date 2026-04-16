@@ -206,7 +206,7 @@ while True:
     elif initialMenuSelection == 3:
         print("---Query Menu---")
         try:
-            queryMenu(data) 
+            queryMenu(data) #calls query menu function (above)
         except Exception as e:
             print("Error:", e)
 
