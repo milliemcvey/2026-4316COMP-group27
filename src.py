@@ -83,8 +83,8 @@ def averageBasedEnquiry(df):
         print("Error calculating the average:", e)
 
     # Query menu
+def queryMenu(df):
     while True:
-
         print("===RESEARCH QUERIES MENU===")
         print("1. Most Popular Genre")
         print("2. Genre with Shortest/Longest Songs")
