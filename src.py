@@ -145,7 +145,8 @@ while True:
     print("\n--- Main Menu ---")
     print("1. Trend-Based Enquiry")
     print("2. Average-Based Enquiry")
-    print("3. Exit")
+    print("3. Query Menu")
+    print("4. Exit")
 
     try:
         initialMenuSelection = int(input("Enter your choice: "))
@@ -169,6 +170,13 @@ while True:
             print("ERROR:", e)
 
     elif initialMenuSelection == 3:
+        print("---Query Menu---")
+        try:
+            queryMenu(data) 
+        except Exception as e:
+            print("Error:", e)
+
+    elif initialMenuSelection == 4:
         print("Thank You For Using The System")
         break
 
