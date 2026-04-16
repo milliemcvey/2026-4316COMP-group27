@@ -136,8 +136,8 @@ def queryMenu(df):
             print("\n======Custom Query:=============") 
             print("Available:", list(df.columns[5:])) 
             print("=================================")
-            col1 = input("Column 1: ").strip() #input validation for column names 
-            col2 = input("Column 2: ").strip()
+            column1 = input("Column 1: ").strip() #input validation for column names 
+            column2 = input("Column 2: ").strip()
 
             if column1 in df.columns and column2 in df.columns: 
 
