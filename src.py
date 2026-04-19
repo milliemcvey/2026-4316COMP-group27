@@ -99,51 +99,57 @@ def customQuery(df):
 
             if column1 not in df.columns and column2 not in df.columns:
                 print("Invalid column name(s). Please try again.")
-                break
-            else:
-                grouped_summary = df.groupby(column1)[column2].mean()
-                print("Average values by category:")
-                print(grouped_summary)
+                continue
+            
+            is_num1 = pd.api.types.is_numeric_dtype(df[column1])
+            is_num2 = pd.api.types.is_numeric_dtype(df[column2])
 
-                most = grouped_summary.idxmax()
-                least = grouped_summary.idxmin()
-                top_value = grouped_summary.max()
+            if not is_num1 and is_num2:
+             grouped_summary = df.groupby(column1)[column2].mean()
+             
+             print("Average values by category:")
+             print(grouped_summary)
 
-                print("==============")
-                print("Grouped Summary:")
-                print(f"Highest Rated: {most}")
-                print(f"Lowest Rated: {least}")
-                print(f"With the average being: {top_value: .2f}")
-                print("==============")
+             most = grouped_summary.idxmax()
+             least = grouped_summary.idxmin()
+             top_value = grouped_summary.max()
 
-                is_num1 = df[column1].dtype != 'object'
-                is_num2 = df[column2].dtype != 'object'
-                if is_num1 and is_num2:
+             print("==============")
+             print("Grouped Summary:")
+             print(f"Highest Rated: {most}")
+             print(f"Lowest Rated: {least}")
+             print(f"With the average being: {top_value: .2f}")
+             print("==============")
+             break
 
-                    x = df[column1]
+            elif is_num1 and is_num2:
+                x = df[column1]
                 y = df[column2]
 
-                corr = x.corr(y)
-                avg1 = x.mean()
-                avg2 = y.mean()
+            corr = x.corr(y)
+            avg1 = x.mean()
+            avg2 = y.mean()
+            
+            print("========================================")
+            print("        NUMERIC CORRELATION       ")
+            print(f"\nCorrelation between {column1} and {column2}: {corr:.2f}")
 
-                print("====NUMERIC CORRELATION====")
-                print(f"\nCorrelation between {column1} and {column2}: {corr:.2f}")
-
-                if corr > 0.5:
+            if corr > 0.5:
                     print("STRONG POSITIVE CORRELATION")
-                elif corr < -0.5:
+            elif corr < -0.5:
                     print("STRONG NEGATIVE CORRELATION")
-                elif corr > 0.2:
+            elif corr > 0.2:
                     print("MODERATE POSITIVE CORRELATION")
-                elif corr < -0.2:
+            elif corr < -0.2:
                     print("MODERATE NEGATIVE CORRELATION")
-                else:
+            else:
                     print("WEAK OR NO CORRELATION")
-                print("\n======= AVERAGES ===============")
-                print(f"Average of {column1}: {avg1:.2f}")
-                print(f"Average of {column2}: {avg2:.2f}")
-                print("==================================")
+            
+            print("======================================")
+            print("          AVERAGE RESULTS         ")
+            print(f"\nAverage of {column1}: {avg1:.2f}")
+            print(f"Average of {column2}: {avg2:.2f}")
+            print("======================================")
 
 
 #-----------------------MAIN PROGRAM-----------------------
