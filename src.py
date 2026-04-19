@@ -116,6 +116,36 @@ def customQuery(df):
                 print(f"With the average being: {top_value: .2f}")
                 print("==============")
 
+                is_num1 = df[column1].dtype != 'object'
+                is_num2 = df[column2].dtype != 'object'
+                if is_num1 and is_num2:
+
+                    x = df[column1]
+                y = df[column2]
+
+                corr = x.corr(y)
+                avg1 = x.mean()
+                avg2 = y.mean()
+
+                print("====NUMERIC CORRELATION====")
+                print(f"\nCorrelation between {column1} and {column2}: {corr:.2f}")
+
+                if corr > 0.5:
+                    print("STRONG POSITIVE CORRELATION")
+                elif corr < -0.5:
+                    print("STRONG NEGATIVE CORRELATION")
+                elif corr > 0.2:
+                    print("MODERATE POSITIVE CORRELATION")
+                elif corr < -0.2:
+                    print("MODERATE NEGATIVE CORRELATION")
+                else:
+                    print("WEAK OR NO CORRELATION")
+                print("\n======= AVERAGES ===============")
+                print(f"Average of {column1}: {avg1:.2f}")
+                print(f"Average of {column2}: {avg2:.2f}")
+                print("==================================")
+
+
 #-----------------------MAIN PROGRAM-----------------------
 
 #Opening Menu -----------------------------
