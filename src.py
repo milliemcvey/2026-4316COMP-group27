@@ -160,7 +160,7 @@ while True:
     print("\n--- Main Menu ---")
     print("1. Trend-Based Enquiry")
     print("2. Average-Based Enquiry")
-    print("3. Query Menu")
+    print("3. Create a Custom Query")
     print("4. Exit")
 
     try:
@@ -185,7 +185,7 @@ while True:
             print("ERROR:", e)
 
     elif initialMenuSelection == 3:
-        print("---Query Menu---")
+        print("--- Create a Custom Query ---")
         try:
             customQuery(data) #calls query menu function (above)
         except Exception as e:
