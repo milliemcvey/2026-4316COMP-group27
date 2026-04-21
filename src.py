@@ -88,8 +88,8 @@ def averageBasedEnquiry(df):
 
         ax.bar(labels, values)
 
-        ax.set_title("Average Comparison", fontsize=14)
-        ax.set_xlabel("Columns", fontsize=12)
+        ax.set_title(f"Average Comparison: {column1} vs {column2}", fontsize=14)
+        ax.set_xlabel(f"{column1} vs {column2}", fontsize=12)
         ax.set_ylabel("Average Value", fontsize=12)
         ax.grid(True)
 
