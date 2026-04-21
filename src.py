@@ -79,6 +79,23 @@ def averageBasedEnquiry(df):
         print("\n====AVERAGE RESULTS====")
         print(f"Average of {column1}  {avg1:.2f}") 
         print(f"Average of {column2}: {avg2:.2f}")
+       
+        # Create bar chart 
+        fig, ax = plt.subplots(figsize=(8, 5))
+
+        labels = [column1, column2]
+        values = [avg1, avg2]
+
+        ax.bar(labels, values)
+
+        ax.set_title("Average Comparison", fontsize=14)
+        ax.set_xlabel("Columns", fontsize=12)
+        ax.set_ylabel("Average Value", fontsize=12)
+        ax.grid(True)
+
+        plt.tight_layout()
+        plt.show()
+
     except Exception as e:
         print("Error calculating the average:", e)
 
