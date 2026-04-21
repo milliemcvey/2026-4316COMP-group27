@@ -101,47 +101,50 @@ def averageBasedEnquiry(df):
 
     # Query menu
 def customQuery(df):
-        filtered_columns = df.columns[5:]
+    filtered_columns = df.columns[5:]
 
-        print("====CUSTOM QUERY====")
-        print("Available Columns:")
-        print(list(filtered_columns))
-        print("*****ONLY ENTER ANY TEXT BASED COLUMNS IN COLUMN 1*****")
+    print("====CUSTOM QUERY====")
+    print("Available Columns:")
+    print(list(filtered_columns))
+    print("*****ONLY ENTER ANY TEXT BASED COLUMNS IN COLUMN 1*****")
 
-        while True:
-            print("\nPlease enter the first column name: ", end="", flush=True)
-            column1 = input()
-            print("\nPlease enter the second column name: ", end="", flush=True)
-            column2 = input()
+    while True:
+        print("\nPlease enter the first column name: ", end="", flush=True)
+        column1 = input()
+        print("\nPlease enter the second column name: ", end="", flush=True)
+        column2 = input()
 
-            if column1 not in df.columns and column2 not in df.columns:
-                print("Invalid column name(s). Please try again.")
-                continue
-            
-            is_num1 = pd.api.types.is_numeric_dtype(df[column1])
-            is_num2 = pd.api.types.is_numeric_dtype(df[column2])
+        if column1 not in df.columns or column2 not in df.columns:
+            print("Invalid column name(s). Please try again.")
+            continue
+        
+        is_num1 = pd.api.types.is_numeric_dtype(df[column1])
+        is_num2 = pd.api.types.is_numeric_dtype(df[column2])
 
-            if not is_num1 and is_num2:
-             grouped_summary = df.groupby(column1)[column2].mean()
+        # ---- TEXT + NUMERIC ----
+        if not is_num1 and is_num2:
+            grouped_summary = df.groupby(column1)[column2].mean()
              
-             print("Average values by category:")
-             print(grouped_summary)
+            print("Average values by category:")
+            print(grouped_summary)
 
-             most = grouped_summary.idxmax()
-             least = grouped_summary.idxmin()
-             top_value = grouped_summary.max()
+            most = grouped_summary.idxmax()
+            least = grouped_summary.idxmin()
+            top_value = grouped_summary.max()
 
-             print("==============")
-             print("Grouped Summary:")
-             print(f"Highest Rated: {most}")
-             print(f"Lowest Rated: {least}")
-             print(f"With the average being: {top_value: .2f}")
-             print("==============")
-             break
+            print("==============")
+            print("Grouped Summary:")
+            print(f"Highest Rated: {most}")
+            print(f"Lowest Rated: {least}")
+            print(f"With the average being: {top_value:.2f}")
+            print("==============")
 
-            elif is_num1 and is_num2:
-                x = df[column1]
-                y = df[column2]
+            break  # ✅ return to main menu
+
+        # ---- NUMERIC + NUMERIC ----
+        elif is_num1 and is_num2:
+            x = df[column1]
+            y = df[column2]
 
             corr = x.corr(y)
             avg1 = x.mean()
@@ -152,21 +155,26 @@ def customQuery(df):
             print(f"\nCorrelation between {column1} and {column2}: {corr:.2f}")
 
             if corr > 0.5:
-                    print("STRONG POSITIVE CORRELATION")
+                print("STRONG POSITIVE CORRELATION")
             elif corr < -0.5:
-                    print("STRONG NEGATIVE CORRELATION")
+                print("STRONG NEGATIVE CORRELATION")
             elif corr > 0.2:
-                    print("MODERATE POSITIVE CORRELATION")
+                print("MODERATE POSITIVE CORRELATION")
             elif corr < -0.2:
-                    print("MODERATE NEGATIVE CORRELATION")
+                print("MODERATE NEGATIVE CORRELATION")
             else:
-                    print("WEAK OR NO CORRELATION")
+                print("WEAK OR NO CORRELATION")
             
             print("======================================")
             print("          AVERAGE RESULTS         ")
             print(f"\nAverage of {column1}: {avg1:.2f}")
             print(f"Average of {column2}: {avg2:.2f}")
             print("======================================")
+
+            break 
+
+        else:
+            print("Unsupported column types. Try again.")
 
 
 #-----------------------MAIN PROGRAM-----------------------
