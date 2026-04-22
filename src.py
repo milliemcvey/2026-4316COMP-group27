@@ -77,7 +77,7 @@ def averageBasedEnquiry(df):
 
         if not pd.api.types.is_numeric_dtype(clean_df[column1]) or not pd.api.types.is_numeric_dtype(clean_df[column2]):
            print("Error: Both selected columns must be numeric.")
-        return
+           return
         
         avg1 = df[column1].mean() #calulates averge for column
         avg2 = df[column2].mean()
