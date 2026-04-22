@@ -38,6 +38,7 @@
             <li>The user selects two column names and enters in to the system</li>
             <li>The system feeds back the names of the column</li>
             <li>The system presents the user the average values</li>
+            
 <h2>How to Run</h2>
 <p>Follow these steps to set up and run the application:</p>
 <h3>1. Prepare the Files</h3>
