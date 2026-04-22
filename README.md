@@ -118,6 +118,9 @@
 <h4>Omar Farah</h4>
 <h5>Reference: <code>/OmarFarah-visualisation/OmarFarah-visualisation.py</code></h5>
 <p>The system automatically produces two visualisations: a bar chart for query 14 investigating whether the key of a song affects popularity, and a bar chart for query 15 investigating whether explicit songs are louder than non-explicit songs.</p>
+<h4>Raul Marafiotti>
+<h5>Reference: <code>/RaulMarafiotti-visualisation/RaulMarafiotti-visualisation.py</code></h5>
+<p>The system will produce a visualisation as a scatter plot for query 7 (Does energy affect danceability?) and query 9 (Does the length of the song affect the popularity)</p>
 <h2>Limitations</h2>
 <ul>
     <li>Column names are case-sensitive and must be entered exactly</li>
