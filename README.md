@@ -26,7 +26,7 @@
         <li>NOTE: Additional Functionality Needed Here, e.g. option to create another enquiry</li>
 
 <h2>Queries</h2>
-    <ul>
+    <ol>
         <li>Is there a most popular genre?</li>
         <li>Does the acousticness affect the danceability?</li>
         <li>Does the tempo of a song affect the popularity?</li>
@@ -41,8 +41,11 @@
         <li>Are longer songs more or less danceable?</li>
         <li>Does the key of a song affect the popularity?</li>
         <li>Are explicit songs louder than others?</li>
-    </ul>
+    </ol>
     <p>NOTE: See queries.xsls in the OneDrive for query allocation</p>
+
+<h2>Individual Data Visualisation</h2>
+<p>Daisy Farrow - The system automatically runs once ran and outputs the visualisations as a scatter plot for query 3 and a bar chart for query 4 and a list for each genre and their avergae for 4</p>
 
 <h2>Accessing Dataset within program</h2>
     <p>NOTE: To be added at a later date</p>
