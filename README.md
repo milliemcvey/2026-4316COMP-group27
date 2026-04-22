@@ -111,7 +111,7 @@
 <h2>Individual Data Visualisation</h2>
 <h4>Daisy Farrow</h4>
 <h5>Reference: <code>/DaisyFarrow-visualisation/DaisyFarrow-visualisation.py</code></h5>
-<p>The system automatically runs once ran and outputs the visualisations as a scatter plot for query 3 and a bar chart for query 4 and a list for each genre and their average for 4</p>
+<p>The system automatically outputs the visualisations as a scatter plot for query 3 (displaying the relationship between tempo and popularity) and a bar chart for query 4 (showing the length of each song in seconds for each genre) and a list for each genre and their average for query 4.</p>
 <h4>Millie McVey</h4>
 <h5>Reference: <code>/MillieMcVey-visualisation/MillieMcVey-visualisation.py</code></h5>
 <p>The system automatically produces two visualisations: a bar chart for query 1, and a scatter plot for query 8. The bar chart displays the average popularity for each genre, and the scatter plot displays the relationship between the key and the energy of the songs in the dataset </p>
