@@ -3,9 +3,9 @@
     <h3>Libraries</h3>
         <p>The system is built in Python using the following libraries:</p>
         <ul>
-            <li>pandas for data handling</li>
-            <li>matplotlib for visualisation</li>
-            <li>numpy for calculations<li>
+            <li><a href="https://pandas.pydata.org/">pandas</a> for data handling</li>
+            <li><a href="https://matplotlib.org/">matplotlib</a> for visualisation</li>
+            <li><a href="https://numpy.org/">numpy</a> for calculations</li>
         </ul>
 
 <h2>Functionality</h2>
