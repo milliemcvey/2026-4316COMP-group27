@@ -73,12 +73,21 @@ def averageBasedEnquiry(df):
 
     # average calculations
     try:
+        clean_df = df[[column1,column2]].dropna()
+
+        if not pd.api.types.is_numeric_dtype(clean_df[column1]) or not pd.api.types.is_numeric_dtype(clean_df[column2]):
+           print("Error: Both selected columns must be numeric.")
+        return
+        
         avg1 = df[column1].mean() #calulates averge for column
         avg2 = df[column2].mean()
 
+        median1 = clean_df[column1].median() # calculate median
+        median2 = clean_df[column2].median()
+
         print("\n====AVERAGE RESULTS====")
-        print(f"Average of {column1}  {avg1:.2f}") 
-        print(f"Average of {column2}: {avg2:.2f}")
+        print(f"Average of {column1}  {avg1:.2f}, median={median1:.2f}")
+        print(f"Average of {column2}: {avg2:.2f}, median={median2:.2f}")")
        
         # Create bar chart 
         fig, ax = plt.subplots(figsize=(8, 5))
