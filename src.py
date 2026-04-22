@@ -86,8 +86,8 @@ def averageBasedEnquiry(df):
         median2 = clean_df[column2].median()
 
         print("\n====AVERAGE RESULTS====")
-        print(f"Average of {column1}  {avg1:.2f}, median={median1:.2f}")
-        print(f"Average of {column2}: {avg2:.2f}, median={median2:.2f}")")
+        print(f"Average of {column1}  {avg1:.2f}, median={median1:.1f}")
+        print(f"Average of {column2}: {avg2:.2f}, median={median2:.2f}")
        
         # Create bar chart 
         fig, ax = plt.subplots(figsize=(8, 5))
@@ -148,7 +148,7 @@ def customQuery(df):
             print(f"With the average being: {top_value:.2f}")
             print("==============")
 
-            break  # ✅ return to main menu
+            break  #  return to main menu
 
         # ---- NUMERIC + NUMERIC ----
         elif is_num1 and is_num2:
