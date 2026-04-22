@@ -98,7 +98,7 @@
         <li>Is there a genre with the longest/shortest songs?</li>
         <li>Does the loudness affect the energy of the song?</li>
         <li>How does the liveness affect the popularity?</li>
-        <li>Does whether the song is explicit affect the popularity?</li>
+        <li>Does energy affect danceability?</li>
         <li>Does the key of the song affect the energy?</li>
         <li>Does the length of the song affect the popularity?</li>
         <li>Are faster songs more danceable?</li>
