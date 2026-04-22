@@ -28,24 +28,32 @@
     <h3>Trend-Based Enquiry</h3> 
         <p>If a 'trend-based' enquiry is selected, the system completes the following tasks:</p>
         <ol>
-        <li>The user selects two column names and enters in to the system</li>
-        <li>The system feeds back the names of the column</li>
-        <li>The system the produces a graph between the selected columns (including trend lines) to show the user the relationship between the variables</li>
+        <li>Displays a list of available columns (excluding non-relevant metadata)</li>
+        <li>Prompts the user to input two column names</li>
+        <li>Validates the input to ensure both columns exist in the dataset</li>
+        <li>Displays the selected data</li>
+        <li>Generates a scatter plot showing the relationship between the two variables</li>
+        <li>Calculates and overlays a line of best fit (trend line) using linear regression</li>
+        <li>Labels and formats the graph for clarity</li>
         </ol>
     <h3>Average-Based Enquiry</h3>
         <p>If an 'average-based' enquiry is selected, the system completes the following tasks:</p>
         <ol>
-            <li>The user selects two column names and enters in to the system</li>
-            <li>The system feeds back the names of the column</li>
-            <li>The system presents the user the average values</li>
-            
+        <li>Displays available columns</li>
+        <li>Prompts the user to input two column names</li>
+        <li>Validates the input</li>
+        <li>Calculates the mean (average) of both columns</li>
+        <li>Displays the results numerically</li>
+        <li>Generates a bar chart comparing the average values</li>
+        </ol>
+
 <h2>How to Run</h2>
 <p>Follow these steps to set up and run the application:</p>
 <h3>1. Prepare the Files</h3>
 <ul>
     <li>Ensure the following files are in the same folder:
         <ul>
-            <li><code>main.py</code> (the program file)</li>
+            <li><code>src.py</code> (the program file)</li>
             <li><code>dataset.csv</code> (the dataset)</li>
         </ul>
     </li>
@@ -78,17 +86,6 @@
 </ul>
 <h3>6. Exit the Program</h3>
 <p>Select option <strong>4</strong> from the menu to safely exit the application.</p>
-
-<h3>Troubleshooting</h3>
-<p>If the program does not run:</p>
-<ul>
-    <li>Check that <code>dataset.csv</code> is in the correct location</li>
-    <li>Verify column names using:</li>
-</ul>
-<pre><code>print(data.columns)</code></pre>
-<ul>
-    <li>Ensure all required libraries are installed</li>
-</ul>
 
 <h2>Queries</h2>
     <ol>
