@@ -26,20 +26,76 @@
  </ol>
  <p>The system's next processes vary depending on the users selection: </p>
     <h3>Trend-Based Enquiry</h3> 
-    <p>If a 'trend-based' enquiry is selected, the system completes the following tasks:</p>
-    <ol>
-    <li>The user selects two column names and enters in to the system</li>
-    <li>The system feeds back the names of the column</li>
-    <li>The system the produces a graph between the selected columns (including trend lines) to show the user the relationship between the variables</li>
-    </ol>
-    
-
-<h3>Average-Based Enquiry</h3>
-    <p>If an 'average-based' enquiry is selected, the system completes the following tasks:</p>
-    <ol>
+        <p>If a 'trend-based' enquiry is selected, the system completes the following tasks:</p>
+        <ol>
         <li>The user selects two column names and enters in to the system</li>
         <li>The system feeds back the names of the column</li>
-        <li>The system presents the user the average values</li>
+        <li>The system the produces a graph between the selected columns (including trend lines) to show the user the relationship between the variables</li>
+        </ol>
+    <h3>Average-Based Enquiry</h3>
+        <p>If an 'average-based' enquiry is selected, the system completes the following tasks:</p>
+        <ol>
+            <li>The user selects two column names and enters in to the system</li>
+            <li>The system feeds back the names of the column</li>
+            <li>The system presents the user the average values</li>
+
+<h2>How to Run</h2>
+
+<p>Follow these steps to set up and run the application:</p>
+
+<h3>1. Prepare the Files</h3>
+<ul>
+    <li>Ensure the following files are in the same folder:
+        <ul>
+            <li><code>main.py</code> (the program file)</li>
+            <li><code>dataset.csv</code> (the dataset)</li>
+        </ul>
+    </li>
+    <li>Check that the dataset contains the required columns (e.g. popularity, genre, tempo, energy, etc.)</li>
+</ul>
+
+<h3>2. Install Required Libraries</h3>
+<p>Make sure Python is installed on your system. Then install the required libraries if you do not already have them:</p>
+<pre><code>pip install pandas matplotlib numpy</code></pre>
+
+<h3>3. Run the Program</h3>
+<p>Open a terminal or command prompt, navigate to the folder containing the files, and run:</p>
+<pre><code>python main.py</code></pre>
+
+<h3>4. Use the Menu</h3>
+<p>Once the program starts, a menu will appear:</p>
+<ol>
+    <li>Trend-Based Enquiry</li>
+    <li>Average-Based Enquiry</li>
+    <li>Create a Custom Query</li>
+    <li>Exit</li>
+</ol>
+<ul>
+    <li>Enter the number corresponding to your choice</li>
+    <li>Follow the prompts to input column names</li>
+    <li>Ensure column names are typed exactly as shown (case-sensitive)</li>
+</ul>
+
+<h3>5. View Results</h3>
+<ul>
+    <li>Graphs will open in a new window</li>
+    <li>Numerical results will be displayed in the terminal</li>
+    <li>After completing an action, you will return to the main menu</li>
+</ul>
+
+<h3>6. Exit the Program</h3>
+<p>Select option <strong>4</strong> from the menu to safely exit the application.</p>
+
+<h3>Troubleshooting</h3>
+<p>If the program does not run:</p>
+<ul>
+    <li>Check that <code>dataset.csv</code> is in the correct location</li>
+    <li>Verify column names using:</li>
+</ul>
+<pre><code>print(data.columns)</code></pre>
+<ul>
+    <li>Ensure all required libraries are installed</li>
+</ul>
 
 <h2>Queries</h2>
     <ol>
