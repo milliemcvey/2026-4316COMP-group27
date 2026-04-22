@@ -13,7 +13,6 @@
     <li>The user selects two column names and enters in to the system</li>
     <li>The system feeds back the names of the column</li>
     <li>The system the produces a graph between the selected columns (including trend lines) to show the user the relationship between the variables</li>
-    <li>NOTE: Additional Functionality Needed Here, e.g. option to create another enquiry</li>
     </ol>
     
 
@@ -23,7 +22,6 @@
         <li>The user selects two column names and enters in to the system</li>
         <li>The system feeds back the names of the column</li>
         <li>The system presents the user the average values</li>
-        <li>NOTE: Additional Functionality Needed Here, e.g. option to create another enquiry</li>
 
 <h2>Queries</h2>
     <ol>
@@ -46,9 +44,4 @@
 
 <h2>Individual Data Visualisation</h2>
 <p>Daisy Farrow - The system automatically runs once ran and outputs the visualisations as a scatter plot for query 3 and a bar chart for query 4 and a list for each genre and their average for 4.</p>
-
-<h2>Accessing Dataset within program</h2>
-    <p>NOTE: To be added at a later date</p>
-
-<h2>File Structure</h2>
-    <p>NOTE: To be added once file structure is final</p>
+<p>Millie McVey - The system automatically produces two visualisations: a bar chart for query 1, and a scatter plot for query 8. The bar chart displays the average popularity for each genre, and the scatter plot displays the relationship between the key and the energy of the songs in the dataset </p>
