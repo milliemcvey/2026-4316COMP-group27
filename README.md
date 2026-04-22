@@ -1,3 +1,13 @@
+<h2>Overview</h2>
+    <p>This application allows users to explore and analyse a dataset of songs using both graphical visualisations and numerical summaries. It provides an interactive menu system where users can investigate relationships between song attributes and identify trends or averages.</p> 
+    <h3>Libraries</h3>
+        <p>The system is built in Python using the following libraries:</p>
+        <ul>
+            <li>pandas for data handling</li>
+            <li>matplotlib for visualisation</li>
+            <li>numpy for calculations<li>
+        </ul>
+
 <h2>Functionality</h2>
     <p>The application should allow the user to visualise data as graphs and numerical values, and filter information in order to gain useful insights in to the qualities of songs and trends between them.</p>
 
