@@ -45,7 +45,7 @@
     <p>NOTE: See queries.xsls in the OneDrive for query allocation</p>
 
 <h2>Individual Data Visualisation</h2>
-<p>Daisy Farrow - The system automatically runs once ran and outputs the visualisations as a scatter plot for query 3 and a bar chart for query 4 and a list for each genre and their avergae for 4</p>
+<p>Daisy Farrow - The system automatically runs once ran and outputs the visualisations as a scatter plot for query 3 and a bar chart for query 4 and a list for each genre and their average for 4.</p>
 
 <h2>Accessing Dataset within program</h2>
     <p>NOTE: To be added at a later date</p>
