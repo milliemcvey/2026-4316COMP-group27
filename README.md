@@ -1,3 +1,4 @@
+<h1>Spotify Data Analyis Application - Group 27</h1>
 <h2>Overview</h2>
     <p>This application allows users to explore and analyse a dataset of songs using both graphical visualisations and numerical summaries. It provides an interactive menu system where users can investigate relationships between song attributes and identify trends or averages.</p>
     <p></p>
@@ -36,6 +37,7 @@
         <li>Calculates and overlays a line of best fit (trend line) using linear regression</li>
         <li>Labels and formats the graph for clarity</li>
         </ol>
+        <p>This allows users to visually assess correlations between variables.</p>
     <h3>Average-Based Enquiry</h3>
         <p>If an 'average-based' enquiry is selected, the system completes the following tasks:</p>
         <ol>
@@ -46,6 +48,7 @@
         <li>Displays the results numerically</li>
         <li>Generates a bar chart comparing the average values</li>
         </ol>
+        <p>This enables users to quickly compare different attributes.</p>
 
 <h2>How to Run</h2>
 <p>Follow these steps to set up and run the application:</p>
@@ -104,7 +107,6 @@
         <li>Does the key of a song affect the popularity?</li>
         <li>Are explicit songs louder than others?</li>
     </ol>
-    <p>NOTE: See queries.xsls in the OneDrive for query allocation</p>
 
 <h2>Individual Data Visualisation</h2>
 <h4>Daisy Farrow</h4>
@@ -113,3 +115,11 @@
 <h4>Millie McVey</h4>
 <h5>Reference: <code>/MillieMcVey-visualisation/MillieMcVey-visualisation.py</code></h5>
 <p>The system automatically produces two visualisations: a bar chart for query 1, and a scatter plot for query 8. The bar chart displays the average popularity for each genre, and the scatter plot displays the relationship between the key and the energy of the songs in the dataset </p>
+
+<h2>Limitations</h2>
+<ul>
+    <li>Column names are case-sensitive and must be entered exactly</li>
+    <li>Missing values are removed automatically during analysis</li>
+    <li>Large datasets are sampled (e.g. 500 rows) for performance in visualisations</li>
+    <li>The system relies on correct dataset formatting (CSV file with appropriate columns)</li>
+</ul>
