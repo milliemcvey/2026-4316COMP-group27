@@ -115,7 +115,9 @@
 <h4>Millie McVey</h4>
 <h5>Reference: <code>/MillieMcVey-visualisation/MillieMcVey-visualisation.py</code></h5>
 <p>The system automatically produces two visualisations: a bar chart for query 1, and a scatter plot for query 8. The bar chart displays the average popularity for each genre, and the scatter plot displays the relationship between the key and the energy of the songs in the dataset </p>
-
+<h4>Omar Farah</h4>
+<h5>Reference: <code>/OmarFarah-visualisation/OmarFarah-visualisation.py</code></h5>
+<p>The system automatically produces two visualisations: a bar chart for query 14 investigating whether the key of a song affects popularity, and a bar chart for query 15 investigating whether explicit songs are louder than non-explicit songs.</p>
 <h2>Limitations</h2>
 <ul>
     <li>Column names are case-sensitive and must be entered exactly</li>
