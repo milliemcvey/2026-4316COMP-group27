@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-data = pd.read_excel("code/dataset.xlsx")
+data = pd.read_excel("dataset.xlsx")
 data.columns = data.columns.str.strip().str.lower()
 
 
