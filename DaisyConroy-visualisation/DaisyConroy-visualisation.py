@@ -7,18 +7,25 @@ data = pd.read_excel("dataset.xlsx") # Reads the dataset from excel
 # How does the liveness affect the popularity?
 # Columns: Liveness, Popularity
 
-def livenessPopularityQuery(data):
+def livenessPopularityQuery(data): # Selects which columns will be used in the query
     columns = data[['liveness', 'popularity']]
 
-    liveness = columns.groupby('liveness')['popularity'].mean().sort_values() # Takes sample from each column
+    sample = columns.dropna().sample(n=500, random_state=42) # Samples columns from the dataset
 
-    print(liveness)
+    x = sample['liveness'] # Grabs the two columns and plots them on the chosen axis
+    y = sample['popularity']
 
-    plt.figure(figsize=(11, 8))
-    liveness.plot(kind='bar', color='crimson')
-    plt.title("How does the liveness affect the popularity", fontsize=15)
+    plt.figure(figsize=(11, 8)) # Creates the scatter graph
+    plt.scatter(x, y, s=25, alpha=0.75, color='maroon')
+
+    m, b = np.polyfit(x, y, 1) # Correlation line
+    plt.plot(x, m*x + b, color='crimson', linewidth=2)
+
+    plt.title("How does the liveness affect the popularity?", fontsize=15) # Plots titles and axis labels
     plt.xlabel("Liveness", fontsize=14)
     plt.ylabel("Popularity", fontsize=14)
+    plt.grid(True)
+
     plt.tight_layout()
     plt.show()
 
@@ -34,12 +41,12 @@ def acousticnessDanceabilityTrendQuery(data): # Selects which columns will be us
     y = sample['danceability']
 
     plt.figure(figsize=(11, 8)) # Creates the scatter graph
-    plt.scatter(x, y, s=25, alpha=0.75)
+    plt.scatter(x, y, s=25, alpha=0.75, color='cyan')
 
     m, b = np.polyfit(x, y, 1) # Correlation line
     plt.plot(x, m*x + b, color='turquoise', linewidth=2)
 
-    plt.title("Does the acousticness affect the danceability?", fontsize=15)
+    plt.title("Does the acousticness affect the danceability?", fontsize=15) # Plots titles and axis labels
     plt.xlabel("Acousticness", fontsize=14)
     plt.ylabel("Danceability", fontsize=14)
     plt.grid(True)
