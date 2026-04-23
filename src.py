@@ -79,8 +79,8 @@ def averageBasedEnquiry(df):
            print("Error: Both selected columns must be numeric.")
            return
         
-        avg1 = df[column1].mean() #calulates averge for column
-        avg2 = df[column2].mean()
+        avg1 = clean_df[column1].mean() #calulates averge for column
+        avg2 = clean_df[column2].mean()
 
         median1 = clean_df[column1].median() # calculate median
         median2 = clean_df[column2].median()
