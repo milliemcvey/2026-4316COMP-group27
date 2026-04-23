@@ -115,7 +115,6 @@ def customQuery(df):
     print("====CUSTOM QUERY====")
     print("Available Columns:")
     print(list(filtered_columns))
-    print("*****ONLY ENTER ANY TEXT BASED COLUMNS IN COLUMN 1*****")
 
     while True:
         print("\nPlease enter the first column name: ", end="", flush=True)

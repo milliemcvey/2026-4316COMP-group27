@@ -10,7 +10,7 @@ data = pd.read_excel("dataset.xlsx") # Reads data from excel
 def genrePopularityQuery(data):
     columns = data[['track_genre' , 'popularity']]
     
-    #Take a sample portion of each columns
+    #Takes a sample portion of each columns
     averageLengths = columns.groupby('track_genre')['popularity'].mean().sort_values()
     
     #Prints average popularity of each genre
