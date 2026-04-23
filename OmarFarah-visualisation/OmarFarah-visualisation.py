@@ -18,7 +18,7 @@ def keyPopularityQuery(data):
 
     # Creates a bar chart
     plt.figure(figsize=(12, 6))
-    averagePopularity.plot(kind='bar', color='blue')
+    averagePopularity.plot(kind='bar', color='green')
 
     plt.title("Does the key of a song affect the popularity?", fontsize=14)
     plt.xlabel("Key", fontsize=12)
@@ -41,7 +41,7 @@ def explicitLoudnessQuery(data):
 
     # Creating the bar chart
     plt.figure(figsize=(12,6))
-    averageLoudness.plot(kind='bar', color='red')
+    averageLoudness.plot(kind='bar', color='green')
 
     plt.title("Are explicit songs louder than others?", fontsize=14)
     plt.xlabel("Song Type", fontsize=12)
